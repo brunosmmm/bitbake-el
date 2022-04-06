@@ -737,6 +737,7 @@ For detail, see `comment-dwim'."
   :syntax-table bitbake-syntax-table
   (setq font-lock-defaults bitbake-font-lock-defaults)
   (setq mode-name "BitBake")
+  (setq-local comment-start "# ")
   (set (make-local-variable 'indent-line-function) 'bitbake-indent-line)
   (define-key bitbake-mode-map [remap comment-dwim] 'bitbake-comment-dwim))
 
@@ -775,6 +776,7 @@ For detail, see `comment-dwim'."
 (mmm-add-mode-ext-class 'bitbake-mode bitbake-mode-file-regex 'bitbake-python)
 (mmm-add-mode-ext-class 'bitbake-mode bitbake-mode-file-regex 'bitbake-python-def)
 
+;;;###autoload
 (add-to-list 'auto-mode-alist
              `(,bitbake-mode-file-regex . bitbake-mode))
 
